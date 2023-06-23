@@ -3,6 +3,7 @@
 import Select from 'react-select'
 
 import useCountries from '@/src/app/hooks/useCountries';
+import Image from 'next/image';
 
 export type CountrySelectValue = {
   flag: string;
@@ -33,7 +34,7 @@ const CountrySelect: React.FC<CountrySelectProps> = ({
         onChange={(value) => onChange(value as CountrySelectValue)}
         formatOptionLabel={(option: any) => (
           <div className="flex flex-row items-center gap-3">
-            <img src={option.flag.default.src} height={24} width={24} alt="image" />
+            <Image src={option.flag.default.src} height={24} width={24} alt="image" />
             <div>
               {option.label},
               <span className="text-neutral-500 ml-1">
